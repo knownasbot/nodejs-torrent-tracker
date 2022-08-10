@@ -1,0 +1,15 @@
+{
+  "name": "torrent-tracker",
+  "version": "1.0.0",
+  "description": "A NodeJS HTTP Torrent Tracker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "knownasbot",
+  "license": "MIT",
+  "dependencies": {
+    "bencode": "^2.0.2",
+    "dotenv": "^11.0.0"
+  }
+}
