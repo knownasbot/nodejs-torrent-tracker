@@ -19,8 +19,8 @@ module.exports = class Tracker {
     }
 
     announce(params) {
-        let checkParams = this._isMissingParams(params);
-        if (checkParams) throw new Error(`bro, where is ${e.message}`);
+        let missingParam = this._isMissingParams(params);
+        if (missingParam) throw new Error(`bro, where is ${missingParam}`);
 
         let infoHash = params.info_hash;
 
@@ -78,16 +78,12 @@ module.exports = class Tracker {
 
     _isMissingParams(params) {
         const requiredParams = ["info_hash", "peer_id", "port"];
-        let missing = false;
     
         for (let key of requiredParams) {
             if (!params[key]) {
-                missing = true;
-                break;
+                return key;
             }
         }
-    
-        return missing;
     }
 
     _response(params) {
