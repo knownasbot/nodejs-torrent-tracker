@@ -61,6 +61,8 @@ module.exports = class Server {
         let parsed = {};
     
         url.split("&").forEach(v => {
+            if (!v) return;
+
             v = v.split("=");
             if (v[1].includes("%")) {
                 v[1] = v[1].toLowerCase();
